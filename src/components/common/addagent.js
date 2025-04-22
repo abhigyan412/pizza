@@ -82,12 +82,13 @@ const Addagent = ({
   const [validqueuename, setValidQueuename] = useState(true);
 
   useEffect(() => {
-    loadagentddL().then((response) => {
-      setAgentdata(response.data.resultset);
+    loadagentDDL().then((response) => {
+      setAgentdata(response.resultset);
     });
-    loadlanguageddl().then((response) => {
-      setLanguagedata(response.data.resultset);
+    loadlanguageDDL().then((response) => {
+      setLanguagedata(response.resultset);
     });
+  
     setItemSizeSelected(
       agentdetail?.languagelist
         ? JSON.parse(agentdetail?.languagelist).map((i) => {
@@ -95,7 +96,8 @@ const Addagent = ({
           })
         : []
     );
-  }, [agentdetail]);
+  }, [agentdetail, loadagentDDL, loadlanguageDDL]);
+  
 
   const selectedValues = (selectedList, selectedItem) => {
     const list = selectedList.map((i) => {
