@@ -150,7 +150,7 @@ const Home = ({
   const [validpos, setValidPOS] = useState(true);
   const [role, setRole] = useState("");
   const [roledesc, setRoleDesc] = useState("");
-  const [uploadAudio, setUploadAudio] = useState(null);
+  const [, setUploadAudio] = useState(null);
 
   const debounceFunc = debounce(
     1000,

@@ -119,15 +119,7 @@ const Restaurantsetup = ({
  
   
 
-  useEffect(() => {
-    handlelistInput();
-    handlelistmusichold();
-    handlelistqueues();
-    handlelistqueuemember();
-    handlelistagent();
-  }, []);
-
-  const handlelistInput = () => {
+  const handlelistInput = useCallback(() => {
     let params = {
       search: "",
       pageno: 1,
@@ -140,8 +132,9 @@ const Restaurantsetup = ({
       .catch((error) => {
         console.log("error: ", error);
       });
-  };
-  const handlelistmusichold = () => {
+  }, []);
+  
+  const handlelistmusichold = useCallback(() => {
     let params = {
       search: "",
       pageno: 1,
@@ -154,8 +147,9 @@ const Restaurantsetup = ({
       .catch((error) => {
         console.log("error: ", error);
       });
-  };
-  const handlelistqueues = () => {
+  }, []);
+  
+  const handlelistqueues = useCallback(() => {
     let params = {
       search: "",
       pageno: 1,
@@ -168,8 +162,9 @@ const Restaurantsetup = ({
       .catch((error) => {
         console.log("error: ", error);
       });
-  };
-  const handlelistqueuemember = () => {
+  }, []);
+  
+  const handlelistqueuemember = useCallback(() => {
     let params = {
       search: "",
       pageno: 1,
@@ -182,8 +177,9 @@ const Restaurantsetup = ({
       .catch((error) => {
         console.log("error: ", error);
       });
-  };
-  const handlelistagent = () => {
+  }, []);
+  
+  const handlelistagent = useCallback(() => {
     let params = {
       search: "",
       pageno: 1,
@@ -196,8 +192,22 @@ const Restaurantsetup = ({
       .catch((error) => {
         console.log("error: ", error);
       });
-  };
-
+  }, []);
+  
+  useEffect(() => {
+    handlelistInput();
+    handlelistmusichold();
+    handlelistqueues();
+    handlelistqueuemember();
+    handlelistagent();
+  }, [
+    handlelistInput,
+    handlelistmusichold,
+    handlelistqueues,
+    handlelistqueuemember,
+    handlelistagent,
+  ]);
+  
   // ADD AND EDIT RESTAURANT INPUT
   const addnewInput = (params) => {
     setOpeninputpopup(true);
