@@ -525,9 +525,7 @@ const Home = ({
     setSelectedAudio(event.target.files[0]);
   };
   
-  const handleUploadAudio = (event) => {
-    setUploadAudio(event.target.files[0]);
-  };
+ 
 
   // UPLOAD AUDIOFILE
   // const saveUploadaudio = (event) => {
@@ -975,30 +973,7 @@ const Home = ({
   };
 
   // Tostify
-  const formvalidate = () => {
-    
-      if (merchantid === "") {
-        setValidMerchantid(false);
-      }
-      if (clientid === "") {
-        setValidClientid(false);
-      }
-      if (secretkey === "") {
-        setValidSecretkey(false);
-      }
-      if (secretcode === "") {
-        setValidSecretcode(false);
-      }
-      if (authtoken === "") {
-        setValidAuthtoken(false);
-      }
-      if (pos === "") {
-        setValidPOS(false);
-      }
-    
-    toast.warning("All fields are required!", { autoClose: 2000 });
-  };
-
+  
   return (
     <div className="dashboard-page">
       <div className="dashboard-header">
