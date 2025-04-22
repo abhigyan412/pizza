@@ -204,7 +204,20 @@ const Home = ({
       .catch((error) => {
         console.log(error);
       });
-  }, [searchData, pagenumber, audioPageno, pageno, orderpageno]);
+  }, [
+    searchData,
+    pagenumber,
+    audioPageno,
+    pageno,
+    orderpageno,
+    handlelistcompany,
+    handlelistagent,
+    listUploadedaudio,
+    listErroraudio,
+    listOrderitems,
+    loadcompanyddl
+  ]);
+  
 
   /* START LISTING */
   const handlelistcompany = () => {
@@ -959,7 +972,7 @@ const Home = ({
 
   // Tostify
   const formvalidate = () => {
-    {
+    
       if (merchantid === "") {
         setValidMerchantid(false);
       }
@@ -978,7 +991,7 @@ const Home = ({
       if (pos === "") {
         setValidPOS(false);
       }
-    }
+    
     toast.warning("All fields are required!", { autoClose: 2000 });
   };
 

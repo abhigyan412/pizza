@@ -13,15 +13,14 @@ import TableCell from "@mui/material/TableCell";
 import Paper from "@mui/material/Paper";
 import {
   Box,
-  FormControl,
   Button,
   TextField,
   MenuItem,
-  Slide,
+
   Stack,
   Dialog,
 } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import { ToastContainer, toast } from "react-toastify";
 import {
@@ -53,9 +52,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
-import { Search } from "../common/search/search";
-import { SearchIconWrapper } from "../common/search/searchiconwrapper";
-import { StyledInputBase } from "../common/search/styledinputbase";
+
 import { debounce } from "throttle-debounce";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -119,13 +116,7 @@ const Restaurantsetup = ({
   const [rejectqueue, setRejectQueue] = useState(false);
   const [rejectmqueue, setRejectMQueue] = useState(false);
 
-  const debounceFunc = debounce(
-    1000,
-    (value) => {
-      setSearchData(value);
-    },
-    { atBegin: false }
-  );
+ 
 
   useEffect(() => {
     handlelistInput();

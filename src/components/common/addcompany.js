@@ -138,8 +138,6 @@ const Addcompany = ({
   const [validcustomername, setValidCustomerName] = useState(true);
   const [validemail, setValidEmail] = useState(true);
   const [validusername, setValidUsername] = useState(true);
-  const [validfirstname, setValidFirstName] = useState(true);
-  const [validlastname, setValidLastName] = useState(true);
   const [validregno, setValidRegno] = useState(true);
   const [validaddress1, setValidAddress1] = useState(true);
   const [validaddress2, setValidAddress2] = useState(true);
@@ -158,14 +156,15 @@ const Addcompany = ({
   const [validtimeinmin, setValidTimeInMin] = useState(true);
   const [validqueuename, setValidQueuename] = useState(true);
   const [validwhatsappurl, setValidWhatsappURL] = useState(true);
-  const [validWInstructions, setValidWInstructions] = useState(true);
+  
   const [isValid, setIsValid] = useState(false);
   const [validtax, setValidTax] = useState(true);
   const [message, setMessage] = useState("");
 
   // Email validation
   const emailRegex =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+
   const emailvalidation = (event) => {
     setEmail(event.target.value);
     if (event.target.value !== "") {
@@ -328,7 +327,7 @@ const Addcompany = ({
   };
   // Tostify
   const formvalidate = () => {
-    {
+    
       if (companyname === "") {
         setValidCompanyName(false);
       }
@@ -389,7 +388,7 @@ const Addcompany = ({
       // if (whatsappurl == "") {
       //   setValidWhatsappURL(false);
       // }
-    }
+    
     toast.warning("All fields are required!", { autoClose: 1000 });
   };
 
