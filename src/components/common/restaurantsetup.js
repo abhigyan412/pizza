@@ -117,6 +117,7 @@ const Restaurantsetup = ({
   const [rejectmqueue, setRejectMQueue] = useState(false);
 
  
+  const [searchData, setSearchData] = useState("");
 
   useEffect(() => {
     handlelistInput();
