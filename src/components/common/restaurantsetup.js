@@ -11,6 +11,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Paper from "@mui/material/Paper";
+import { useEffect, useCallback } from "react";
 import {
   Box,
   Button,
@@ -118,7 +119,7 @@ const Restaurantsetup = ({
 
  
   
-
+  
   const handlelistInput = useCallback(() => {
     let params = {
       search: "",
