@@ -169,7 +169,7 @@ const Home = ({
   const [audiocount, setAudiocount] = useState(0);
   const [openAudio, setopenAudio] = useState(false);
   const [selectedAudio, setSelectedAudio] = useState(null);
-  const [uploadAudio, setUploadAudio] = useState(null);
+ 
   const [welcomefile, setWelcomefile] = useState(false);
   const [openGptpopup, setOpenGptpopup] = useState(false);
   const [listWelcomefile, setListWelcomefile] = useState([]);
@@ -191,32 +191,7 @@ const Home = ({
   const [orderpageno, setOrderPageno] = useState(0);
   const [opensetupopup, setOpenSetupopup] = useState(false);
 
-  useEffect(() => {
-    handlelistcompany();
-    handlelistagent();
-    listUploadedaudio();
-    listErroraudio();
-    listOrderitems();
   
-    loadcompanyddl()
-      .then((response) => {
-        setCompanydll(response.data.resultset);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [
-    handlelistcompany,
-    handlelistagent,
-    listUploadedaudio,
-    listErroraudio,
-    listOrderitems,
-    searchData,
-    pagenumber,
-    audioPageno,
-    pageno,
-    orderpageno,
-  ]);
   
   
 
@@ -311,6 +286,33 @@ const Home = ({
   };
 
   /* END LISTING */
+
+  useEffect(() => {
+    handlelistcompany();
+    handlelistagent();
+    listUploadedaudio();
+    listErroraudio();
+    listOrderitems();
+  
+    loadcompanyddl()
+      .then((response) => {
+        setCompanydll(response.data.resultset);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [
+    handlelistcompany,
+    handlelistagent,
+    listUploadedaudio,
+    listErroraudio,
+    listOrderitems,
+    searchData,
+    pagenumber,
+    audioPageno,
+    pageno,
+    orderpageno,
+  ]);
 
   // ADD AND EDIT COMPANY
   const addnewclick = (params) => {

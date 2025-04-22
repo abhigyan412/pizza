@@ -96,7 +96,8 @@ const Addagent = ({
           })
         : []
     );
-  }, [agentdetail, loadagentDDL, loadlanguageDDL]);
+  }, [agentdetail]); 
+  
   
 
   const selectedValues = (selectedList, selectedItem) => {

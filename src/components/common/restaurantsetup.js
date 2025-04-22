@@ -117,7 +117,7 @@ const Restaurantsetup = ({
   const [rejectmqueue, setRejectMQueue] = useState(false);
 
  
-  const [searchData, setSearchData] = useState("");
+  
 
   useEffect(() => {
     handlelistInput();
@@ -125,7 +125,7 @@ const Restaurantsetup = ({
     handlelistqueues();
     handlelistqueuemember();
     handlelistagent();
-  }, [searchData]);
+  }, []);
 
   const handlelistInput = () => {
     let params = {
