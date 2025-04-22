@@ -308,6 +308,7 @@ const Home = ({
     listUploadedaudio,
     listErroraudio,
     listOrderitems,
+    loadcompanyddl,
     searchData,
     pagenumber,
     audioPageno,
