@@ -150,6 +150,7 @@ const Home = ({
   const [validpos, setValidPOS] = useState(true);
   const [role, setRole] = useState("");
   const [roledesc, setRoleDesc] = useState("");
+  const [uploadAudio, setUploadAudio] = useState(null);
 
   const debounceFunc = debounce(
     1000,
@@ -523,7 +524,7 @@ const Home = ({
   const handleAudio = (event) => {
     setSelectedAudio(event.target.files[0]);
   };
-
+  
   const handleUploadAudio = (event) => {
     setUploadAudio(event.target.files[0]);
   };
