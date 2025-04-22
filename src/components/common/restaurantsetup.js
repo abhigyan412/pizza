@@ -120,80 +120,67 @@ const Restaurantsetup = ({
  
   
   
-  const handlelistInput = useCallback(() => {
-    let params = {
-      search: "",
-      pageno: 1,
-    };
-    loadrestaurantInput(params)
-      .then((response) => {
-        setRestaurantinfo(response.data.resultset);
-        setRestrow(response.data.resultset.length);
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-      });
-  }, []);
-  
-  const handlelistmusichold = useCallback(() => {
-    let params = {
-      search: "",
-      pageno: 1,
-    };
-    loadmusiconhold(params)
-      .then((response) => {
-        setMusicholdinfo(response.data.resultset);
-        setMusicrow(response.data.resultset.length);
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-      });
-  }, []);
-  
-  const handlelistqueues = useCallback(() => {
-    let params = {
-      search: "",
-      pageno: 1,
-    };
-    loadqueues(params)
-      .then((response) => {
-        setQueuesinfo(response.data.resultset);
-        setQueuerow(response.data.resultset.length);
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-      });
-  }, []);
-  
-  const handlelistqueuemember = useCallback(() => {
-    let params = {
-      search: "",
-      pageno: 1,
-    };
-    loadqueuemember(params)
-      .then((response) => {
-        setQueuemember(response.data.resultset);
-        setQueueMerow(response.data.resultset.length);
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-      });
-  }, []);
-  
-  const handlelistagent = useCallback(() => {
-    let params = {
-      search: "",
-      pageno: 1,
-    };
-    loadagent(params)
-      .then((response) => {
-        setAgentInfo(response.data.resultset);
-        setAgentrow(response.data.resultset.length);
-      })
-      .catch((error) => {
-        console.log("error: ", error);
-      });
-  }, []);
+ // Assuming loadrestaurantInput and others are imported or stable functions
+const handlelistInput = useCallback(() => {
+  let params = { search: "", pageno: 1 };
+  loadrestaurantInput(params)
+    .then((response) => {
+      setRestaurantinfo(response.data.resultset);
+      setRestrow(response.data.resultset.length);
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
+}, [loadrestaurantInput]);  // ✅ added dependency
+
+const handlelistmusichold = useCallback(() => {
+  let params = { search: "", pageno: 1 };
+  loadmusiconhold(params)
+    .then((response) => {
+      setMusicholdinfo(response.data.resultset);
+      setMusicrow(response.data.resultset.length);
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
+}, [loadmusiconhold]);
+
+const handlelistqueues = useCallback(() => {
+  let params = { search: "", pageno: 1 };
+  loadqueues(params)
+    .then((response) => {
+      setQueuesinfo(response.data.resultset);
+      setQueuerow(response.data.resultset.length);
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
+}, [loadqueues]);
+
+const handlelistqueuemember = useCallback(() => {
+  let params = { search: "", pageno: 1 };
+  loadqueuemember(params)
+    .then((response) => {
+      setQueuemember(response.data.resultset);
+      setQueueMerow(response.data.resultset.length);
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
+}, [loadqueuemember]);
+
+const handlelistagent = useCallback(() => {
+  let params = { search: "", pageno: 1 };
+  loadagent(params)
+    .then((response) => {
+      setAgentInfo(response.data.resultset);
+      setAgentrow(response.data.resultset.length);
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
+}, [loadagent]);
+
   
   useEffect(() => {
     handlelistInput();
