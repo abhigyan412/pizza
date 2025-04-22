@@ -10,12 +10,12 @@
     {
       "src": "vslogo.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "200x76"
     },
     {
       "src": "vslogo.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "200x76"
     }
   ],
   "start_url": ".",
