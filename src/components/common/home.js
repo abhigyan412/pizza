@@ -197,8 +197,7 @@ const Home = ({
   
 
   /* START LISTING */
-  const handlelistcompany = () => {
-    // debugger;
+  const handlelistcompany = useCallback(() => {
     setOpenloading(true);
     let params = {
       search: searchData,
@@ -209,18 +208,15 @@ const Home = ({
         setCompanyinfo(response.data.resultset);
         setTotalrow(response.data.resultset.length);
         setTotalcount(Math.ceil(response.data.totalrow / 10));
-        setTimeout(() => {
-          setOpenloading(false);
-        }, 500);
+        setTimeout(() => setOpenloading(false), 500);
       })
       .catch((error) => {
         console.log("error: ", error);
-        setTimeout(() => {
-          setOpenloading(false);
-        }, 500);
+        setTimeout(() => setOpenloading(false), 500);
       });
-  };
-  const handlelistagent = () => {
+  }, [searchData, pagenumber, loadCompany]);
+  
+  const handlelistagent = useCallback(() => {
     setOpenloading(true);
     let param = {
       userid: state.loginreducer.logininfo.data.data[0].userid,
@@ -229,18 +225,15 @@ const Home = ({
       .then((response) => {
         setAgentinfo(response.data.resultset);
         setTotalagent(response.data.resultset.length);
-        setTimeout(() => {
-          setOpenloading(false);
-        }, 500);
+        setTimeout(() => setOpenloading(false), 500);
       })
       .catch((error) => {
         console.log("error: ", error);
-        setTimeout(() => {
-          setOpenloading(false);
-        }, 500);
+        setTimeout(() => setOpenloading(false), 500);
       });
-  };
-  const listUploadedaudio = () => {
+  }, [state.loginreducer.logininfo.data.data, loadAgent]);
+  
+  const listUploadedaudio = useCallback(() => {
     let params = {
       search: searchData,
       pageno: audioPageno,
@@ -254,8 +247,9 @@ const Home = ({
       .catch((error) => {
         console.log(error);
       });
-  };
-  const listErroraudio = () => {
+  }, [searchData, audioPageno, loadUploadedaudio]);
+  
+  const listErroraudio = useCallback(() => {
     let params = {
       search: searchData,
       pageno: pageno,
@@ -269,8 +263,9 @@ const Home = ({
       .catch((error) => {
         console.log(error);
       });
-  };
-  const listOrderitems = () => {
+  }, [searchData, pageno, loadErroraudio]);
+  
+  const listOrderitems = useCallback(() => {
     let params = {
       search: searchData,
       pageno: orderpageno,
@@ -284,8 +279,8 @@ const Home = ({
       .catch((error) => {
         console.log(error);
       });
-  };
-
+  }, [searchData, orderpageno, loadorderlist]);
+  
   /* END LISTING */
 
   useEffect(() => {
