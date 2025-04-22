@@ -112,17 +112,17 @@ const Addagent = ({
       return { languageid: i.languageid };
     });
     if (
-      agentname != "" &&
-      agentcity != "" &&
-      username != "" &&
-      userpwd != "" &&
-      usermobile != "" &&
-      extension != "" &&
-      extensionpwd != "" &&
-      queuename != ""
+      agentname !=="" &&
+      agentcity !== "" &&
+      username !== "" &&
+      userpwd !== "" &&
+      usermobile !=="" &&
+      extension !== "" &&
+      extensionpwd !== "" &&
+      queuename !== ""
     ) {
-      if (languagesize != 0) {
-        if (isadmin == false ? reportmanager != "" : reportmanager == "") {
+      if (languagesize !== 0) {
+        if (isadmin === false ? reportmanager !== "" : reportmanager === "") {
           let params = {
             type: agentdetail.agentid === undefined ? 1 : 2,
             agentid:
@@ -193,31 +193,31 @@ const Addagent = ({
   // Tostify
   const formvalidate = () => {
     {
-      if (agentname == "") {
+      if (agentname === "") {
         setValidAgentName(false);
       }
-      if (agentcity == "") {
+      if (agentcity === "") {
         setValidAgentCity(false);
       }
-      if (username == "") {
+      if (username ==="") {
         setValidUsername(false);
       }
-      if (userpwd == "") {
+      if (userpwd === "") {
         setValidUserPwd(false);
       }
-      if (usermobile == "") {
+      if (usermobile === "") {
         setValidUserMobile(false);
       }
-      if (extension == "") {
+      if (extension === "") {
         setValidExtension(false);
       }
-      if (extensionpwd == "") {
+      if (extensionpwd === "") {
         setValidExtensionPwd(false);
       }
-      if (reportmanager == "") {
+      if (reportmanager ==="") {
         setValidReportManager(false);
       }
-      if (queuename == "") {
+      if (queuename === "") {
         setValidQueuename(false);
       }
     }
@@ -327,7 +327,7 @@ const Addagent = ({
                   error={!validagentname}
                   onChange={(event) => {
                     setAgentName(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidAgentName(true);
                     }
                   }}
@@ -343,7 +343,7 @@ const Addagent = ({
                   error={!validagentcity}
                   onChange={(event) => {
                     setAgentCity(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidAgentCity(true);
                     }
                   }}
@@ -361,7 +361,7 @@ const Addagent = ({
                   error={!validusername}
                   onChange={(event) => {
                     setUsername(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidUsername(true);
                     }
                   }}
@@ -378,7 +378,7 @@ const Addagent = ({
                   error={!validuserpwd}
                   onChange={(event) => {
                     setUserPwd(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidUserPwd(true);
                     }
                   }}
@@ -398,7 +398,7 @@ const Addagent = ({
                   error={!validusermobile}
                   onChange={(event) => {
                     setUserMobile(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidUserMobile(true);
                     }
                   }}
@@ -415,7 +415,7 @@ const Addagent = ({
                   error={!validextension}
                   onChange={(event) => {
                     setExtension(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidExtension(true);
                     }
                   }}
@@ -435,7 +435,7 @@ const Addagent = ({
                   error={!validextensionpwd}
                   onChange={(event) => {
                     setExtensionPwd(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidExtensionPwd(true);
                     }
                   }}
@@ -477,7 +477,7 @@ const Addagent = ({
                     label="Admin"
                   />
                 </FormGroup>
-                {isadmin == false
+                {isadmin === false
                   ? [
                       <TextField
                         sx={{
@@ -491,7 +491,7 @@ const Addagent = ({
                         error={!validreportmanager}
                         onChange={(event) => {
                           setReportManager(event.target.value);
-                          if (event.target.value != "") {
+                          if (event.target.value !== "") {
                             setValidReportManager(true);
                           }
                         }}
@@ -517,7 +517,7 @@ const Addagent = ({
                   error={!validqueuename}
                   onChange={(event) => {
                     setQueuename(event.target.value);
-                    if (event.target.value != "") {
+                    if (event.target.value !== "") {
                       setValidQueuename(true);
                     }
                   }}

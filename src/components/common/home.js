@@ -22,7 +22,7 @@ import DriveFolderUploadIcon from "@mui/icons-material/DriveFolderUpload";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import {
   Box,
-  FormControl,
+  
   Button,
   TextField,
   MenuItem,
@@ -553,7 +553,7 @@ const Home = ({
   // UPLOAD AUDIOFILE
   const saveUploadaudio = (event) => {
     event.preventDefault();
-    if (itemname != "") {
+    if (itemname !== "") {
       let param = {
         itemname: itemname.toLowerCase(),
         userid: state.loginreducer.logininfo.data.data[0].userid,
@@ -712,8 +712,8 @@ const Home = ({
 
   // SUBMIT ERROR AUDIOTEXT
   const onSubmitAudiotext = (row, i) => {
-    if (correctedtext != "") {
-      if (i == selectedindex) {
+    if (correctedtext !== "") {
+      if (i === selectedindex) {
         let param = {
           id: row.transid,
           correctedtext: correctedtext,
@@ -1816,7 +1816,7 @@ const Home = ({
                           <ReactAudioPlayer src={row.audiopath} controls />
                         </TableCell>
                         <TableCell align="center" className="headerstyle">
-                          {selectedindex == i ? (
+                          {selectedindex === i ? (
                             <input
                               style={{ fontWeight: "lighter" }}
                               type="text"
