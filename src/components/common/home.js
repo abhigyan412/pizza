@@ -197,6 +197,7 @@ const Home = ({
     listUploadedaudio();
     listErroraudio();
     listOrderitems();
+  
     loadcompanyddl()
       .then((response) => {
         setCompanydll(response.data.resultset);
@@ -205,18 +206,18 @@ const Home = ({
         console.log(error);
       });
   }, [
-    searchData,
-    pagenumber,
-    audioPageno,
-    pageno,
-    orderpageno,
     handlelistcompany,
     handlelistagent,
     listUploadedaudio,
     listErroraudio,
     listOrderitems,
-    loadcompanyddl
+    searchData,
+    pagenumber,
+    audioPageno,
+    pageno,
+    orderpageno,
   ]);
+  
   
 
   /* START LISTING */

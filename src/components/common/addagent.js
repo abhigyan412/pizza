@@ -192,7 +192,7 @@ const Addagent = ({
   };
   // Tostify
   const formvalidate = () => {
-    {
+    
       if (agentname === "") {
         setValidAgentName(false);
       }
@@ -220,7 +220,7 @@ const Addagent = ({
       if (queuename === "") {
         setValidQueuename(false);
       }
-    }
+    
     toast.warning("All fields are required!", { autoClose: 1000 });
   };
   return (

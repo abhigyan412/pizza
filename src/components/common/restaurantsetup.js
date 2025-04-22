@@ -53,7 +53,7 @@ import DialogTitle from "@mui/material/DialogTitle";
 import DialogContentText from "@mui/material/DialogContentText";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 
-import { debounce } from "throttle-debounce";
+
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
@@ -79,7 +79,7 @@ const Restaurantsetup = ({
   loadagent,
   agentdetails,
 }) => {
-  const [searchData, setSearchData] = useState("");
+ 
   const [restaurantinfo, setRestaurantinfo] = useState([]);
   const [musicholdinfo, setMusicholdinfo] = useState([]);
   const [queuesinfo, setQueuesinfo] = useState([]);
